@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class Part2
@@ -12,8 +14,8 @@ public class Part2
         String file = new File("").getAbsolutePath();
         file = file.concat("\\src\\InputData.txt");
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-        ArrayList<Monkey> monkeys = new ArrayList<>();
-        Monkey monkey = new Monkey();
+        ArrayList<Monkey2> monkeys = new ArrayList<>();
+        Monkey2 monkey = new Monkey2();
         while (true)
         {
             line = bufferedReader.readLine();
@@ -25,7 +27,7 @@ public class Part2
             {
                 if(line.equals(""))
                 {
-                    monkey = new Monkey();
+                    monkey = new Monkey2();
                 }
                 else
                 {
@@ -60,8 +62,8 @@ public class Part2
                 }
             }
         }
-        MonkeyManager manager = new MonkeyManager(monkeys);
-        for (int i = 0; i < 20; i++)
+        MonkeyManager2 manager = new MonkeyManager2(monkeys);
+        for (int i = 0; i < 10000; i++)
         {
             manager.moveMonkeyItems();
         }
